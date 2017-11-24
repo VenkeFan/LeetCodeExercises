@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' executeOnSourceChanges='false'>
+    <pages>
+        <page name='1. Two Sum'/>
+        <page name='461. Hamming Distance'/>
+        <page name='657. Judge Route Circle'/>
+        <page name='7. Reverse Integer'/>
+        <page name='9. Palindrome Number'/>
+        <page name='14. Longest Common Prefix'/>
+        <page name='20. Valid Parentheses'/>
+        <page name='21. Merge Two Sorted Lists'/>
+        <page name='26. Remove Duplicates from Sorted Array'/>
+        <page name='27. Remove Element'/>
+        <page name='28. Implement strStr'/>
+        <page name='35. Search Insert Position'/>
+        <page name='38. Count and Say'/>
+        <page name='53. Maximum Subarray'/>
+        <page name='58. Length of Last Word'/>
+        <page name='66. Plus One'/>
+        <page name='67. Add Binary'/>
+        <page name='69. Sqrt(x)'/>
+        <page name='70. Climbing Stairs'/>
+    </pages>
+</playground>
