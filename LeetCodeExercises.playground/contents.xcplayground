@@ -20,5 +20,9 @@
         <page name='67. Add Binary'/>
         <page name='69. Sqrt(x)'/>
         <page name='70. Climbing Stairs'/>
+        <page name='83. Remove Duplicates from Sorted List'/>
+        <page name='88. Merge Sorted Array'/>
+        <page name='100. Same Tree'/>
+        <page name='101. Symmetric Tree'/>
     </pages>
 </playground>

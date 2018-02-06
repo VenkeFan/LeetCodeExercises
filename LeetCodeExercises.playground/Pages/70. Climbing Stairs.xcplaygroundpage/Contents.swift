@@ -37,19 +37,19 @@ func climbStairsOfMine_Iteration(_ n: Int) -> Int {
     if n < 2 {
         return 1;
     }
-    
+
     var pre = 1, cur = 1;
-    
+
     for _ in 2...n {
         cur = pre + cur;
         pre = cur - pre;
     }
-    
+
     return cur;
 }
 
 
-/// 普通递归
+/// 普通递归（数据过多会栈溢出 ）
 func climbStairsOfMine_Recursion(_ n: Int) -> Int {
     return n < 2 ? 1 : climbStairsOfMine_Recursion(n - 1) + climbStairsOfMine_Recursion(n - 2);
 }
@@ -86,7 +86,7 @@ func climbStairsOfMine_Recursion_Tail(_ n: Int, _ pre: Int = 1, _ cur: Int = 1) 
     return climbStairsOfMine_Recursion_Tail(n - 1, previous, current);
 }
 
-var n = 9;
+var n = 6;
 
 climbStairsOfMine_Iteration(n);
 
@@ -95,3 +95,4 @@ climbStairsOfMine_Recursion(n);
 climbStairsOfMine_Recursion_HashMap(n);
 
 climbStairsOfMine_Recursion_Tail(n);
+

@@ -35,6 +35,6 @@ func binarySearch(_ nums: [Int], _ target: Int) -> Int {
 
 
 var array = [1,3,5,6,9,16];
-var target = 0;
+var target = 20;
 
 binarySearch(array, target);

@@ -89,9 +89,9 @@ func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
 
 
 var node1 = initializeListNode([1, 5, 9, 13, 35, 123]);
-var node2 = initializeListNode([3, 6, 15, 70, 88]);
+var node2 = initializeListNode([3, 6, 15, 70, 188]);
 
-var newNode = mergeTwoLists(node1, node2);
+var newNode = mergeTwoListsOfMine(node1, node2);
 
 var node = newNode;
 while node != nil {

@@ -40,7 +40,7 @@ func addBinaryOfMine(_ a: String, _ b: String) -> String {
             temp2 = Int(String.init(b[b.index(b.startIndex, offsetBy: j)]))!;
         }
         
-        var tempSum: Int = temp1 + temp2 + carryNum;
+        let tempSum: Int = temp1 + temp2 + carryNum;
         if tempSum < 2 {
             sum = String(tempSum) + sum;
             carryNum = 0;
