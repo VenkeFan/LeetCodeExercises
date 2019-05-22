@@ -14,26 +14,6 @@ import Foundation
      return [0, 1].
  */
 
-
-/// 暴力解法（时间复杂度为n^2）
-func twoSumOfMine(array: [Int], target: Int) -> (x: Int, y: Int)? {
-    if (array.isEmpty) {
-        return nil;
-    }
-    
-    for i in 0..<array.count {
-        for j in (i + 1)..<array.count {
-            if array[i] + array[j] == target {
-                return (i, j);
-            }
-        }
-    }
-    
-    return nil;
-}
-
-
-/// 别人的解法（时间复杂度为n）
 func twoSum(array: [Int], target: Int) -> (x: Int, y: Int)? {
     if (array.isEmpty) {
         return nil;
@@ -58,10 +38,33 @@ func twoSum(array: [Int], target: Int) -> (x: Int, y: Int)? {
     return nil;
 }
 
+func twoSum2(array: [Int], target: Int) -> (x: Int, y: Int)? {
+    if (array.isEmpty) {
+        return nil;
+    }
+    
+    var i0 = 0, i1 = 0;
+    var dic = [Int: Int]();
+    
+    for (_, value) in array.enumerated() {
+        let temp = target - value;
+        dic[temp] = value;
+    }
+    
+    for (_, value) in array.enumerated() {
+        if let key = dic[value] {
+            i0 = key;
+            i1 = value;
+            return(i0, i1);
+        }
+    }
+    
+    return nil;
+}
 
 var list: [Int] = [1, 5, 2, 4, 3];
 var sum = 9;
 
-twoSumOfMine(array: list, target: sum);
-
 twoSum(array: list, target: sum);
+
+twoSum2(array: list, target: sum);

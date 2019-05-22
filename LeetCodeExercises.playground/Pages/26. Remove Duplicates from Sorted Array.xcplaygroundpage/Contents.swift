@@ -56,6 +56,6 @@ var array = [1, 1, 1, 1, 2, 5, 5, 5, 5, 8, 8, 9, 9, 10];
 removeDuplicatesOfMine(&array);
 array;
 
-//removeDuplicates(&array);
-//array;
+removeDuplicates(&array);
+array;
 

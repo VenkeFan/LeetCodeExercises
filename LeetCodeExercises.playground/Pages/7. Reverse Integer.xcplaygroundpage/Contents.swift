@@ -38,14 +38,13 @@ func reverseOfMine(_ x: Int) -> Int {
 func reverseOfOthers(_ x: Int) -> Int {
     var result = 0;
     var temp = x;
-    
+    // 123
     while (temp != 0) {
-        var tail = temp % 10;
-        var newResult = result * 10 + tail;
+        let tail = temp % 10;
+        let newResult = result * 10 + tail;
         
         if ((newResult - tail) / 10 != result) {
             return 0;
-            
         }
         result = newResult;
         temp /= 10;
@@ -61,6 +60,7 @@ func reverse(_ x: Int) -> Int {
     var temp = x;
     
     while (temp != 0) {
+        // 考虑int溢出
         if (abs(res) > INT_MAX / 10) {
             return 0;
         }
@@ -71,7 +71,7 @@ func reverse(_ x: Int) -> Int {
 }
 
 
-var x = 123;
+var x = 1000000009;
 
 reverseOfMine(x);
 

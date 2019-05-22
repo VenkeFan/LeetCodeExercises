@@ -28,16 +28,6 @@ func maxSubArrayOfMine(_ nums: [Int]) -> Int {
 }
 
 
-func max3(_ a: Int, _ b: Int, _ c: Int) -> Int {
-    if (a > c && a > b) {
-        return a;
-    } else if c > b {
-        return c;
-    } else {
-        return b;
-    }
-}
-
 func maxSubArrayOfDivideAndConquer(_ nums: [Int], _ left: Int, _ right: Int) -> (max: Int, left: Int, right: Int) {
     
     if left == right {
@@ -92,6 +82,16 @@ func maxSubArrayOfDivideAndConquer(_ nums: [Int], _ left: Int, _ right: Int) -> 
     }
     
     return (maxSum, subLeft, subRight);
+}
+
+func max3(_ a: Int, _ b: Int, _ c: Int) -> Int {
+    if (a > c && a > b) {
+        return a;
+    } else if c > b {
+        return c;
+    } else {
+        return b;
+    }
 }
 
 

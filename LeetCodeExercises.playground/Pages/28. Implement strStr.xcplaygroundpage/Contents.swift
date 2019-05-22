@@ -14,7 +14,7 @@ func strStrOfMine(_ haystack: String, _ needle: String) -> Int {
     
     if let range = haystack.range(of: needle) {
         if !range.isEmpty {
-            index = haystack.characters.distance(from:haystack.startIndex, to:range.lowerBound);
+            index = haystack.distance(from:haystack.startIndex, to:range.lowerBound);
         }
     }
     
@@ -80,6 +80,8 @@ func strStr(_ haystack: String, _ needle: String) -> Int {
 
 var haystack = "hello, wworld"; // "hello, worl";
 var needle = "world"; // "lo";
+
+strStrOfMine(haystack, needle);
 
 strStrOfMine_2(haystack, needle);
 

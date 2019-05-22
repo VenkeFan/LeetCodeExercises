@@ -56,7 +56,7 @@ func lengthOfLastWord(_ s: String) -> Int {
     return length;
 }
 
-var str = "Hello World   ";
+var str = "Hi World   ";
 
 lengthOfLastWordOfMine(str);
 
