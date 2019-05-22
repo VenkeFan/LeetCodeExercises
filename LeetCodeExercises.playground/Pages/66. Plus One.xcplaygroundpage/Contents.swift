@@ -32,30 +32,6 @@ func plusOneOfMine(_ digits: [Int]) -> [Int] {
     return newResult;
 }
 
-func plusOne(_ digits: [Int]) -> [Int] {
-    if (digits.isEmpty) {
-        return digits;
-    }
-    var result = digits;
-    var carry = 1;
-    
-    for (index, value) in result.enumerated() {
-        if (carry == 0) {
-            return digits;
-        }
-        let sum = value + carry;
-        result[index] = sum % 10;
-        carry = sum / 10;
-    }
-    
-    if (carry == 1) {
-        result.insert(digits.first!, at: 1);
-    }
-    return result;
-}
 
-
-var array = [9, 9, 8];
+var array = [9, 9, 9];
 plusOneOfMine(array);
-
-plusOne(array);

@@ -62,7 +62,7 @@ func sqrt(_ n: Int) -> Double {
         return 0;
     }
     
-    var result: Double = 8;
+    var result: Double = 8; // 这里随便取值都可以（若取负数，则结果也为负）
     var pre: Double = 0;
     while result != pre {
         pre = result;
@@ -72,7 +72,7 @@ func sqrt(_ n: Int) -> Double {
 }
 
 
-var i = 81;
+var i = 8;
 
 sqrtOfMine(i);
 
