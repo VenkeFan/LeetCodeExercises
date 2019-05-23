@@ -12,7 +12,8 @@ import Foundation
          2   2
         / \ / \
        3  4 4  3
-      56 78 87  65
+ 
+ inorder: 3241423
  
      But the following [1,2,2,null,3,null,3] is not:
  
@@ -155,17 +156,54 @@ func isSymmetricTree(_ root: TreeNode?) -> Bool {
 }
 
 func isSymmetricTree_Recursion(_ node1: TreeNode?, _ node2: TreeNode?) -> Bool {
-    return nil != node1 && nil != node2
-        && node1?.val == node2?.val
+    if nil == node1 || nil == node2 {
+        return node1?.val == node2?.val;
+    }
+    
+    return node1?.val == node2?.val
         && isSymmetricTree_Recursion(node1?.left, node2?.right)
         && isSymmetricTree_Recursion(node1?.right, node2?.left);
 }
 
-
-/// 别人的解法
+func isSymmetricTree_Iteration(_ root: TreeNode?) -> Bool {
+    let stack = Stack<TreeNode>.init();
+    var list = Array<TreeNode>();
+    
+    var tempNode = root;
+    
+    while tempNode != nil || !stack.isEmpty() {
+        if tempNode != nil {
+            stack.push(tempNode!);
+            tempNode = tempNode?.left;
+        } else {
+            tempNode = stack.pop();
+            
+            list.append(tempNode!);
+            tempNode = tempNode?.right;
+        }
+    }
+    
+    if list.count & 1 == 0 {
+        return false;
+    }
+    
+    var i = list.count / 2;
+    var j = i;
+    
+    while i >= 0 && j < list.count {
+        if list[i].val != list[j].val {
+            return false;
+        }
+        i -= 1;
+        j += 1;
+    }
+    
+    return true;
+}
 
 /*
- 
+/// 别人的解法
+
 // Recursive
 public boolean isSymmetric(TreeNode root) {
     return root==null || isSymmetricHelp(root.left, root.right);
@@ -227,4 +265,6 @@ public boolean isSymmetric(TreeNode root) {
 
 var root = buildCompleteTreeInLevel([1, 2, 2, 3, 4, 4, 3, 5, 6, 7, 8, 8, 7, 6, 5]);
 
-isSymmetricTree(root);
+//isSymmetricTree(root);
+
+isSymmetricTree_Iteration(root);
