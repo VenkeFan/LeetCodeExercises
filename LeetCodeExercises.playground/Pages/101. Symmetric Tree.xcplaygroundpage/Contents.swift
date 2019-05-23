@@ -12,6 +12,7 @@ import Foundation
          2   2
         / \ / \
        3  4 4  3
+      56 78 87  65
  
      But the following [1,2,2,null,3,null,3] is not:
  
@@ -119,15 +120,15 @@ func buildCompleteTreeInLevel(_ array: [Int]) -> TreeNode {
 }
 
 /// 中序遍历
-func isSymmetricOfMine_Recursion(_ root: TreeNode?) -> Void {
+func inorderTraversing_Recursion(_ root: TreeNode?) -> Void {
     if root != nil {
-        isSymmetricOfMine_Recursion(root?.left);
+        inorderTraversing_Recursion(root?.left);
         print("\(root!.val)");
-        isSymmetricOfMine_Recursion(root?.right);
+        inorderTraversing_Recursion(root?.right);
     }
 }
 
-func isSymmetricOfMine_Iteration(_ root: TreeNode?) -> Void {
+func inorderTraversing_Iteration(_ root: TreeNode?) -> Void {
     let stack = Stack<TreeNode>.init();
     
     var tempNode = root;
@@ -145,6 +146,20 @@ func isSymmetricOfMine_Iteration(_ root: TreeNode?) -> Void {
     }
 }
 
+func isSymmetricTree(_ root: TreeNode?) -> Bool {
+    if nil == root || (nil == root?.left && nil == root?.right) {
+        return true;
+    }
+    
+    return isSymmetricTree_Recursion(root?.left, root?.right);
+}
+
+func isSymmetricTree_Recursion(_ node1: TreeNode?, _ node2: TreeNode?) -> Bool {
+    return nil != node1 && nil != node2
+        && node1?.val == node2?.val
+        && isSymmetricTree_Recursion(node1?.left, node2?.right)
+        && isSymmetricTree_Recursion(node1?.right, node2?.left);
+}
 
 
 /// 别人的解法
@@ -212,4 +227,4 @@ public boolean isSymmetric(TreeNode root) {
 
 var root = buildCompleteTreeInLevel([1, 2, 2, 3, 4, 4, 3, 5, 6, 7, 8, 8, 7, 6, 5]);
 
-isSymmetricOfMine_Iteration(root);
+isSymmetricTree(root);
