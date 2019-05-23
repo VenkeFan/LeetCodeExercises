@@ -19,9 +19,9 @@ import Foundation
 
 func hammingDistanceOfMine(x: Int, y: Int) -> Int {
     var dist = 0;
-    var str = String(x ^ y, radix:2);
+    let str = String(x ^ y, radix:2);
     
-    for c in str.characters {
+    for c in str {
         if c == "1" {
             dist += 1;
         }
@@ -33,6 +33,9 @@ func hammingDistanceOfMine(x: Int, y: Int) -> Int {
 func hammingDistance_2(x: Int, y: Int) -> Int {
     var dist = 0, n = x ^ y;
     for i in 0..<32 {
+        if (n >> i) == 0 {
+            break;
+        }
         dist += (n >> i) & 1;
     }
     
@@ -44,7 +47,7 @@ func hammingDistance_2(x: Int, y: Int) -> Int {
 func hammingDistance(x: Int, y: Int) -> Int {
     var dist = 0;
     
-    var n = 15;
+    var n = x ^ y;
     
     while n > 0 {
         dist += 1;
