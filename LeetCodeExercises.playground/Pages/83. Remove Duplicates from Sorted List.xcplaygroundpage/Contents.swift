@@ -72,7 +72,7 @@ func deleteDuplicates(_ head: ListNode?) -> ListNode? {
 
 var originalNode = initializeListNode([1, 2, 3, 4, 4]);
 
-var newNode = deleteDuplicates(originalNode);
+var newNode = deleteDuplicatesOfMine(originalNode);
 
 var tempNode = newNode;
 while tempNode != nil {

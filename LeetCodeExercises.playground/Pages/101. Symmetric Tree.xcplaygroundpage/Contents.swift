@@ -38,7 +38,7 @@ public class TreeNode {
 }
 
 public class Stack<Element> {
-    public var array: [Element];
+    private var array: [Element];
     
     public init() {
         self.array = [Element]();
@@ -62,7 +62,7 @@ public class Stack<Element> {
 }
 
 public class Queue<Element> {
-    public var array: [Element];
+    private var array: [Element];
     
     public init() {
         self.array = [Element]();
@@ -118,7 +118,7 @@ func buildCompleteTreeInLevel(_ array: [Int]) -> TreeNode {
     return root;
 }
 
-/// 思路是中序遍历
+/// 中序遍历
 func isSymmetricOfMine_Recursion(_ root: TreeNode?) -> Void {
     if root != nil {
         isSymmetricOfMine_Recursion(root?.left);
@@ -129,6 +129,7 @@ func isSymmetricOfMine_Recursion(_ root: TreeNode?) -> Void {
 
 func isSymmetricOfMine_Iteration(_ root: TreeNode?) -> Void {
     let stack = Stack<TreeNode>.init();
+    
     var tempNode = root;
 
     while tempNode != nil || !stack.isEmpty() {

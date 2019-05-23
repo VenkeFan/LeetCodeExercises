@@ -72,7 +72,7 @@ func isSameTreeOfMine_2(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
         return true;
     }
     
-    if  p == nil || q == nil {
+    if p == nil || q == nil {
         return false;
     }
     
