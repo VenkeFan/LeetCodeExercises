@@ -22,6 +22,7 @@
         <page name='88. Merge Sorted Array'/>
         <page name='100. Same Tree'/>
         <page name='101. Symmetric Tree'/>
+        <page name='104. Maximum Depth of Binary Tree'/>
         <page name='461. Hamming Distance'/>
         <page name='657. Judge Route Circle'/>
     </pages>
