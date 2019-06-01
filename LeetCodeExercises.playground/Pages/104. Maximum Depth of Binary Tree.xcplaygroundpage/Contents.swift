@@ -82,7 +82,7 @@ public class Queue<Element> {
     }
 }
 
-func buildCompleteTreeInLevel(_ array: [Int]) -> TreeNode {
+func buildBinaryTreeInLevel(_ array: [Int]) -> TreeNode {
     let root = TreeNode.init(array[0]);
     
     let queue = Queue<TreeNode>.init();
@@ -92,17 +92,17 @@ func buildCompleteTreeInLevel(_ array: [Int]) -> TreeNode {
     while !queue.isEmpty() {
         let tempNode = queue.dequeue();
         
-        let left = index < array.count ? TreeNode.init(array[index]) : nil;
-        let right = index + 1 < array.count ? TreeNode.init(array[index + 1]) : nil;
+        let left = index < array.count && array[index] >= 0 ? TreeNode.init(array[index]) : nil;
+        let right = index + 1 < array.count && array[index + 1] >= 0 ? TreeNode.init(array[index + 1]) : nil;
         
         tempNode?.left = left;
         tempNode?.right = right;
         
-        if left != nil && left!.val >= 0 {
+        if left != nil {
             queue.enqueue(left!);
         }
         
-        if right != nil && right!.val >= 0 {
+        if right != nil {
             queue.enqueue(right!);
         }
         
@@ -146,28 +146,49 @@ func maxDepth_Iteration(_ root: TreeNode?) ->Int {
     let s2 = Stack<TreeNode>();
     
     while (!s1.isEmpty() || !s2.isEmpty()) {
-        if (depth % 2 == 0) {
-            while (!s1.isEmpty()) {
-                if let temp = s1.pop() {
-                    s2.push(temp.left);
-                    s2.push(temp.right);
-                }
+        depth += 1;
+        while (!s1.isEmpty()) {
+            if let temp = s1.pop() {
+                s2.push(temp.left);
+                s2.push(temp.right);
             }
-            depth += 1;
-        } else {
-            while (!s2.isEmpty()) {
-                if let temp = s2.pop() {
-                    s1.push(temp.right);
-                    s1.push(temp.left);
-                }
+        }
+        
+        while (!s2.isEmpty()) {
+            if let temp = s2.pop() {
+                s1.push(temp.right);
+                s1.push(temp.left);
             }
-            depth += 1;
         }
     }
-    return depth;
+    
+    return depth + 1;
+    
+    
+//    while (!s1.isEmpty() || !s2.isEmpty()) {
+//        if (depth & 1 == 0) {
+//            while (!s1.isEmpty()) {
+//                if let temp = s1.pop() {
+//                    s2.push(temp.left);
+//                    s2.push(temp.right);
+//                }
+//            }
+//            depth += 1;
+//        } else {
+//            while (!s2.isEmpty()) {
+//                if let temp = s2.pop() {
+//                    s1.push(temp.right);
+//                    s1.push(temp.left);
+//                }
+//            }
+//            depth += 1;
+//        }
+//    }
+//
+//    return depth;
 }
 
-var root = buildCompleteTreeInLevel([3, 9, 20, -1, -1, 15, 7]);
+var root = buildBinaryTreeInLevel([3, 9, 20, -1, -1, 15, 7]);
 
 maxDepth_Recursion(root);
 

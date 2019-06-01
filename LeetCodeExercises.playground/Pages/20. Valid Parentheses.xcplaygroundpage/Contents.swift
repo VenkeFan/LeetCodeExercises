@@ -12,7 +12,7 @@ import Foundation
 /// 维护一个栈。
 /// 遍历字符串，遇到左括号入栈，遇到右括号则和栈顶元素比较，是匹配的话则出栈，否则直接返回 false。最后判断栈是否为空
 func isValidOfMine(_ str: String) -> Bool {
-    if str.count % 2 != 0 {
+    if str.count & 1 != 0 {
         return false;
     }
     
