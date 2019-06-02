@@ -20,7 +20,7 @@ import Foundation
 
 
 func judgeCircleOfMine(_ moves: String) -> Bool {
-    var step = moves.uppercased();
+    let step = moves.uppercased();
     var isCircle = false;
     
     var dic = [Character: Int]();
@@ -29,7 +29,7 @@ func judgeCircleOfMine(_ moves: String) -> Bool {
     dic["U"] = 0;
     dic["D"] = 0;
     
-    for c in step.characters {
+    for c in step {
         dic[c]! += 1;
     }
     
@@ -43,12 +43,12 @@ func judgeCircleOfMine(_ moves: String) -> Bool {
 
 /// 别人的解法
 func judgeCircle(_ moves: String) -> Bool {
-    var step = moves.uppercased();
+    let step = moves.uppercased();
     
     var isCircle = false;
     var horizontal = 0, vertical = 0;
     
-    for c in step.characters {
+    for c in step {
         switch c {
         case "L":
             horizontal += 1;
