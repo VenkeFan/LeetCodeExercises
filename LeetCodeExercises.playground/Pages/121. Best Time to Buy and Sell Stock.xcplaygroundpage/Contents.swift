@@ -15,6 +15,7 @@ import Foundation
  Output: 5
  Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
  Not 7-1 = 6, as selling price needs to be larger than buying price.
+ 
  Example 2:
  
  Input: [7,6,4,3,1]
@@ -23,7 +24,7 @@ import Foundation
  */
 
 
-/// 我这个是找到了最佳利润的买卖那天的下标
+/// 这个方法也找到了最佳利润的买卖那天的下标
 func solutionOfMine(_ array: [Int]) -> (Int, Int) {
     var buy = 0, sell = 0;
     var maxProfit = 0;
