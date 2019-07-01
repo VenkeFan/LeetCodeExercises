@@ -30,5 +30,6 @@
         <page name='118. Pascal&apos;s Triangle'/>
         <page name='121. Best Time to Buy and Sell Stock'/>
         <page name='122. Best Time to Buy and Sell Stock II'/>
+        <page name='167. Two Sum II - Input array is sorted'/>
     </pages>
 </playground>
