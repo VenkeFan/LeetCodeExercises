@@ -32,5 +32,6 @@
         <page name='122. Best Time to Buy and Sell Stock II'/>
         <page name='167. Two Sum II - Input array is sorted'/>
         <page name='169. Majority Element'/>
+        <page name='189. Rotate Array'/>
     </pages>
 </playground>
